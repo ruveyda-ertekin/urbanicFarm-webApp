@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Urbanic Farm Regression Test Report</title>
+        <style>
+            /* Custom Styles for the Report */
+            body {
+            font-family: Arial, sans-serif;
+            }
+            .header {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px;
+            text-align: center;
+            }
+            .footer {
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 10px;
+            }
+            /* Add more custom styles as needed */
+        </style>
+    </head>
+    <body>
+
+        <div class="header">
+            <img src="src/test/resources/selenium_logo.webp" alt="Logo" style="height: 50px;"/>
+            <h1>Urbanic Farm Selenium Test Report</h1>
+            <p>Date: <span id="reportDate"></span></p>
+        </div>
+
+        <script>
+            // JavaScript to set the current date
+            const date = new Date();
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('reportDate').innerText = date.toLocaleDateString(undefined, options);
+        </script>
+
+        <div class="footer">
+            <p>© 2024 UrbanicFarm WebApp</p>
+        </div>
+
+    </body>
+</html>

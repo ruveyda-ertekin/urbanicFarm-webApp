@@ -137,23 +137,17 @@
             <version>1.10.1</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/systems.manifold/manifold-ext -->
-        <dependency>
-            <groupId>systems.manifold</groupId>
-            <artifactId>manifold-ext-rt</artifactId>
-            <version>${manifold.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>systems.manifold</groupId>
-            <artifactId>manifold-props-rt</artifactId>
-            <version>${manifold.version}</version>
-        </dependency>
 
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.30</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.4.1</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -214,15 +208,7 @@
                         <!-- Configure manifold plugin-->
                         <arg>-Xplugin:Manifold</arg>
                     </compilerArgs>
-                    <!-- Add the processor path for the plugin -->
-                    <annotationProcessorPaths>
-                        <path>
-                            <groupId>systems.manifold</groupId>
-                            <artifactId>manifold-ext</artifactId>
-                            <version>${manifold.version}</version>
-                        </path>
 
-                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
 

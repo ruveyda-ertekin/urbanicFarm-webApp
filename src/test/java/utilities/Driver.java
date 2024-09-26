@@ -1,6 +1,5 @@
 package utilities;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
@@ -10,107 +9,152 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 import java.time.Duration;
 import java.util.HashMap;
 
-import static stepDefinitions.Hooks.height;
-import static stepDefinitions.Hooks.width;
+import static stepDefinitions.Hooks.*;
 
 public class Driver {
 
-    // Thread-safe driver instance
+    /*
+    Making our 'driver' instance private so that it is not reachable from outside the class.
+    We make it static, because we want it to run before everything else, and also we will use it in a static method
+     */
     private static ThreadLocal<WebDriver> driverPool = new ThreadLocal<>();
 
-    // Private constructor to prevent instantiation
+    /*
+     Creating the private constructor so this class' object
+     is not reachable from outside
+      */
     private Driver() {
     }
 
-    // Method to get the WebDriver instance
+    /*
+    Creating re-usable utility method that will return same 'driver' instance everytime we call it.
+     */
     public static WebDriver getDriver() {
+        HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
+        chromePrefs.put("download.default_directory", System.getProperty("user.dir") + "\\target");
+        // isFullScreen = true;
+        // isHeadless = true;
+        // browserType = "chrome";
+        //  browserType = "firefox";
+
+
+        // isHeadless = false; //you can see browser
+
+        //setting various capabilities for browsers
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.setExperimentalOption("prefs", chromePrefs);
+
+        if (isHeadless) {
+            chromeOptions.addArguments("use-fake-ui-for-media-stream");
+            chromeOptions.addArguments("--disable-gpu");
+            chromeOptions.addArguments("--headless");
+            chromeOptions.addArguments("--window-size=1920,1080");
+            chromeOptions.addArguments("--no-sandbox");
+            chromeOptions.addArguments("--disable-dev-shm-usage");
+            chromeOptions.addArguments("--remote-allow-origins=*");
+            chromeOptions.addArguments("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36");
+        } else {
+            chromeOptions.addArguments("use-fake-ui-for-media-stream");
+            chromeOptions.addArguments("--disable-gpu");
+            chromeOptions.addArguments("--window-size=1920,1080");
+            chromeOptions.addArguments("--remote-allow-origins=*");
+            chromeOptions.addArguments("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36");
+        }
+
+        FirefoxOptions firefoxOptions = new FirefoxOptions();
+        if (isHeadless) {
+            firefoxOptions.addArguments("--headless");
+            firefoxOptions.addArguments("--disable-gpu");
+            firefoxOptions.addArguments("--window-size=1920,1080");
+//            firefoxOptions.addArguments("use-fake-ui-for-media-stream");
+
+        } else {
+            firefoxOptions.addArguments("--disable-gpu");
+            firefoxOptions.addArguments("--window-size=1920,1080");
+//            firefoxOptions.addArguments("use-fake-ui-for-media-stream");
+
+        }
+
+
+        EdgeOptions edgeOptions = new EdgeOptions();
+        edgeOptions.addArguments("use-fake-ui-for-media-stream");
+
+
         if (driverPool.get() == null) {
             synchronized (Driver.class) {
-                String browserType = ConfigurationReader.getProperty("browser");
-                boolean isHeadless = Boolean.parseBoolean(ConfigurationReader.getProperty("headless"));
-                boolean isFullScreen = Boolean.parseBoolean(ConfigurationReader.getProperty("fullscreen"));
 
-                switch (browserType.toLowerCase()) {
+            /*
+            We read our browser type from configuration.properties file using
+            .getProperty method we create in ConfigurationReader class.
+             */
+                // String browserType = ConfigurationReader.getProperty("browser");
+
+            /*
+            Depending on the browser type our switch statement will determine
+            to open specific type of browser/driver
+             */
+                switch (browserType) {
+
                     case "chrome":
-                        WebDriverManager.chromedriver().setup();
-                        driverPool.set(new ChromeDriver(setChromeOptions(isHeadless)));
+//                       WebDriverManager.chromedriver().setup();
+
+                        driverPool.set(new ChromeDriver(chromeOptions));
                         break;
 
                     case "firefox":
-                        WebDriverManager.firefoxdriver().setup();
-                        driverPool.set(new FirefoxDriver(setFirefoxOptions(isHeadless)));
+//                        WebDriverManager.firefoxdriver().setup();
+                        driverPool.set(new FirefoxDriver(firefoxOptions));
+                        break;
+
+                    case "ie":
+                        if (!System.getProperty("os.name").toLowerCase().contains("windows"))
+                            throw new WebDriverException("Your OS doesn't support Internet Explorer");
+//                        WebDriverManager.iedriver().setup();
+                        driverPool.set(new InternetExplorerDriver());
                         break;
 
                     case "edge":
-                        WebDriverManager.edgedriver().setup();
-                        driverPool.set(new EdgeDriver(setEdgeOptions()));
+                        if (!System.getProperty("os.name").toLowerCase().contains("windows"))
+                            throw new WebDriverException("Your OS doesn't support Edge");
+//                        WebDriverManager.edgedriver().setup();
+                        driverPool.set(new EdgeDriver());
                         break;
 
                     case "safari":
                         if (!System.getProperty("os.name").toLowerCase().contains("mac"))
-                            throw new WebDriverException("Safari is only supported on macOS");
+                            throw new WebDriverException("Your OS doesn't support Safari");
+//                        WebDriverManager.getInstance(SafariDriver.class).setup();
                         driverPool.set(new SafariDriver());
                         break;
-
-                    default:
-                        throw new IllegalArgumentException("Browser type not supported: " + browserType);
                 }
-
-                // Window management
                 if (isFullScreen) {
+
                     driverPool.get().manage().window().maximize();
                 } else {
                     Dimension dimension = new Dimension(width, height);
                     driverPool.get().manage().window().setSize(dimension);
                 }
-
                 driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
             }
         }
+        /* Same driver instance will be returned every time we call Driver.getDriver(); method */
         return driverPool.get();
     }
 
-    // Close the driver and remove it from the thread-local pool
+    /*
+    This method makes sure we have some form of driver session or driver id has.
+    Either null or not null it must exist.
+     */
     public static void closeDriver() {
         if (driverPool.get() != null) {
             driverPool.get().quit();
             driverPool.remove();
         }
-    }
-
-    // Chrome options configuration
-    private static ChromeOptions setChromeOptions(boolean isHeadless) {
-        ChromeOptions chromeOptions = new ChromeOptions();
-        HashMap<String, Object> chromePrefs = new HashMap<>();
-        chromePrefs.put("download.default_directory", System.getProperty("user.dir") + "/target");
-        chromeOptions.setExperimentalOption("prefs", chromePrefs);
-
-        if (isHeadless) {
-            chromeOptions.addArguments("--headless", "--disable-gpu", "--window-size=1920,1080");
-        }
-
-        chromeOptions.addArguments("use-fake-ui-for-media-stream", "--disable-gpu", "--remote-allow-origins=*");
-        return chromeOptions;
-    }
-
-    // Firefox options configuration
-    private static FirefoxOptions setFirefoxOptions(boolean isHeadless) {
-        FirefoxOptions firefoxOptions = new FirefoxOptions();
-        if (isHeadless) {
-            firefoxOptions.addArguments("--headless", "--disable-gpu", "--window-size=1920,1080");
-        }
-        return firefoxOptions;
-    }
-
-    // Edge options configuration
-    private static EdgeOptions setEdgeOptions() {
-        EdgeOptions edgeOptions = new EdgeOptions();
-        edgeOptions.addArguments("use-fake-ui-for-media-stream", "--disable-gpu", "--window-size=1920,1080");
-        return edgeOptions;
     }
 }

@@ -12,6 +12,7 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <manifold.version>2023.1.29</manifold.version>
     </properties>
 
     <dependencies>
@@ -137,6 +138,18 @@
             <version>1.10.1</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/systems.manifold/manifold-ext -->
+        <dependency>
+            <groupId>systems.manifold</groupId>
+            <artifactId>manifold-ext-rt</artifactId>
+            <version>${manifold.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>systems.manifold</groupId>
+            <artifactId>manifold-props-rt</artifactId>
+            <version>${manifold.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -196,6 +209,7 @@
                     </execution>
                 </executions>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -208,6 +222,14 @@
                         <!-- Configure manifold plugin-->
                         <arg>-Xplugin:Manifold</arg>
                     </compilerArgs>
+                    <!-- Add the processor path for the plugin -->
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>systems.manifold</groupId>
+                            <artifactId>manifold-ext</artifactId>
+                            <version>${manifold.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
 
                 </configuration>
             </plugin>

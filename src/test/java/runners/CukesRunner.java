@@ -9,7 +9,6 @@ import org.junit.runner.RunWith;
         plugin = {"pretty",
 
                 "html:target/reports/html/html_reports.html",
-                "monochrome : true, // Display the console output in a readable format",
                 "json:target/reports/json/json-reports/cucumber.json",
                 "junit:target/reports/xml/xml-report/cucumber.xml",
                 "rerun:target/reports/rerun.txt",

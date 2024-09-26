@@ -8,9 +8,12 @@ public class ConfigurationReader {
     private static Properties properties;
 
     static {
+
+        String path = "src/test/resources/configuration.properties";
+
         try {
             // Load the properties file
-            FileInputStream fileInputStream = new FileInputStream("src/test/resources/configuration.properties");
+            FileInputStream fileInputStream = new FileInputStream(path);
             properties = new Properties();
             properties.load(fileInputStream);
             fileInputStream.close();

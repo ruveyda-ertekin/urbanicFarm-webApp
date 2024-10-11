@@ -24,7 +24,7 @@
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
-    <option name="ADDITIONAL_OPTIONS_STRING" value="-Xplugin:Manifold " />
+    <option name="ADDITIONAL_OPTIONS_STRING" value="-Xplugin:Manifold  -processorpath $MAVEN_REPOSITORY$/systems/manifold/manifold-ext-rt/2023.1.29/manifold-ext-rt-2023.1.29.jar:$MAVEN_REPOSITORY$/systems/manifold/manifold-rt/2023.1.29/manifold-rt-2023.1.29.jar:$MAVEN_REPOSITORY$/systems/manifold/manifold-util/2023.1.29/manifold-util-2023.1.29.jar:$MAVEN_REPOSITORY$/systems/manifold/manifold-props-rt/2023.1.29/manifold-props-rt-2023.1.29.jar:$MAVEN_REPOSITORY$/systems/manifold/manifold-ext/2023.1.29/manifold-ext-2023.1.29.jar:$MAVEN_REPOSITORY$/systems/manifold/manifold/2023.1.29/manifold-2023.1.29.jar" />
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="urbanicFarm" options="-Xplugin:Manifold" />
     </option>

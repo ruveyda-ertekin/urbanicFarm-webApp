@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="4.573">
-    <testcase classname="Login functionality" name="Successful login with valid credentials" time="4.509">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="5" time="126.155">
+    <testcase classname="Verify that the home page is accessible" name="As a user I should be able to access the home page" time="54.278">
+        <system-out><![CDATA[Given the user is on the home page..........................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Verify that the home page header buttons" name="As a user I should be able to see the various titles when I enter the homepage" time="14.752">
+        <system-out><![CDATA[Given the user is on the home page..........................................passed
+Then the following headers should be visible from left to right:............passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Verify various operations on the home page" name="User should be able to perform various operations on homepage" time="18.37">
+        <system-out><![CDATA[Given the user is on the home page..........................................passed
+When the relevant Blog button should be clickable...........................passed
+And the user clicks on the Blog link........................................passed
+Then the relevant Blog page should be visible...............................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Verify various operations on the home page" name="User should be able to perform various operations on homepage" time="17.013">
+        <system-out><![CDATA[Given the user is on the home page..........................................passed
+When the relevant Farmers Market button should be clickable.................passed
+And the user clicks on the Farmers Market link..............................passed
+Then the relevant Farmers Market page should be visible.....................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Login functionality" name="Successful login with valid credentials" time="21.373">
         <system-out><![CDATA[Given the user is on the login page.........................................passed
 When the user enters valid credentials......................................passed
 And the user clicks on the login button.....................................passed

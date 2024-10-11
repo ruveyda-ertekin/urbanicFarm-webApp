@@ -12,13 +12,11 @@ import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 import utilities.ReusableMethods;
 
-import static stepDefinitions.Hooks.commonPage;
 import static stepDefinitions.Hooks.driver;
 
-public class US_001_login extends CommonPage {
+public class US_038 extends CommonPage {
 
-    private static final Logger logger = LogManager.getLogger(US_001_login.class);
-
+    private static final Logger logger = LogManager.getLogger(US_038.class);
 
     String baseURL = "https://test.urbanicfarm.com/";
     String loginPageURL = "https://test.urbanicfarm.com/auth/login";

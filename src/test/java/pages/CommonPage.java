@@ -12,6 +12,8 @@ public abstract class CommonPage {
     public FarmersMarketPage farmersMarketPage;
     public ExplorePage explorePage;
     public AboutUsPage aboutUsPage;
+    public ContactUsPage contactUsPage;
+
 
     public CommonPage() {
         PageFactory.initElements(driver, this);
@@ -57,5 +59,12 @@ public abstract class CommonPage {
             aboutUsPage = new AboutUsPage();
         }
         return aboutUsPage;
+    }
+
+    public ContactUsPage getContactUsPage() {
+        if (contactUsPage == null) {
+            contactUsPage = new ContactUsPage();
+        }
+        return contactUsPage;
     }
 }

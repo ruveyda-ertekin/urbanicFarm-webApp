@@ -19,6 +19,7 @@ public class US_007 extends CommonPage {
 
     @Then("the relevant Contact Us page should be visible")
     public void theRelevantContactUsPageShouldBeVisible() {
+        Assert.assertTrue("Contact Us Page is not visible.", getContactUsPage().contactUsPageTitle.isDisplayed());
 
     }
 }

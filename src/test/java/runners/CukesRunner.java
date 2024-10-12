@@ -18,7 +18,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features", // Path to feature files
         glue = "stepDefinitions",
         dryRun = false, // Set to true to check if the mappings are correct without executing
-        tags = "@UI" // Specify which tags to run
+        tags = "@US_010" // Specify which tags to run
 
 )
 

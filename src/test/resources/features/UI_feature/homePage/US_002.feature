@@ -58,3 +58,9 @@ Feature: Verify that the home page header buttons
     When the relevant Register button should be clickable
     And the user clicks on the Register link
     Then the relevant Register page should be visible
+
+  @TC-10
+  Scenario: Verify that the 'Get fresh produce' button is clickable and relevant page should be visible
+    When the relevant Get fresh produce button should be clickable
+    And the user clicks on the Get fresh produce link
+    Then the relevant Farmers Market page should be visible

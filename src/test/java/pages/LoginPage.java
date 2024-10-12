@@ -13,6 +13,10 @@ public class LoginPage extends CommonPage {
     public WebElement passwordButton;
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement loginButton;
+
+    @FindBy(xpath = "(//a[text()='Login'])[2]")
+    public WebElement loginText;
+
     public LoginPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }

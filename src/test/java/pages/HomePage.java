@@ -22,9 +22,9 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "//a[text()='Contact Us']")
     public WebElement contactUsButton;
     @FindBy(xpath = "//a[text()='Login']")
-    public WebElement LoginButton;
+    public WebElement loginButton;
     @FindBy(xpath = "//a[text()='Register']")
-    public WebElement RegisterButton;
+    public WebElement registerButton;
     public HomePage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }

@@ -34,10 +34,10 @@ public class US_002 extends CommonPage {
         Assert.assertTrue("'Contact Us' header is not displayed.", getHomePage().contactUsButton.isDisplayed());
         Assert.assertEquals(getHomePage().contactUsButton.getText(), expectedHeaders.get(5));
 
-        Assert.assertTrue("'Login' header is not displayed.", getHomePage().LoginButton.isDisplayed());
-        Assert.assertEquals(getHomePage().LoginButton.getText(), expectedHeaders.get(6));
+        Assert.assertTrue("'Login' header is not displayed.", getHomePage().loginButton.isDisplayed());
+        Assert.assertEquals(getHomePage().loginButton.getText(), expectedHeaders.get(6));
 
-        Assert.assertTrue("'Register' header is not displayed.", homePage.RegisterButton.isDisplayed());
-        Assert.assertEquals(getHomePage().RegisterButton.getText(), expectedHeaders.get(7));
+        Assert.assertTrue("'Register' header is not displayed.", homePage.registerButton.isDisplayed());
+        Assert.assertEquals(getHomePage().registerButton.getText(), expectedHeaders.get(7));
     }
 }

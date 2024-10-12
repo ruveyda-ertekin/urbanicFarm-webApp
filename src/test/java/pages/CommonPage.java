@@ -14,6 +14,8 @@ public abstract class CommonPage {
     public AboutUsPage aboutUsPage;
     public ContactUsPage contactUsPage;
 
+    public RegisterPage registerPage;
+
 
     public CommonPage() {
         PageFactory.initElements(driver, this);
@@ -66,5 +68,12 @@ public abstract class CommonPage {
             contactUsPage = new ContactUsPage();
         }
         return contactUsPage;
+    }
+
+    public RegisterPage getRegisterPage() {
+        if (registerPage == null) {
+            registerPage = new RegisterPage();
+        }
+        return registerPage;
     }
 }

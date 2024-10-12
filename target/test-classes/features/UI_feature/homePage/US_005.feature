@@ -5,7 +5,7 @@ Feature: Verify various operations on the home page
     Given the user is on the home page
 
   @TC-01
-  Scenario: User should be able to perform various operations on homepage
+  Scenario: Verify that the Explore link is clickable and navigates to the Explore page
     When the relevant Explore button should be clickable
     And the user clicks on the Explore link
     Then the relevant Explore page should be visible

@@ -17,7 +17,7 @@ public class HomePage extends CommonPage {
     public WebElement farmersMarketButton;
     @FindBy(xpath = "//a[text()='Explore']")
     public WebElement exploreButton;
-    @FindBy(xpath = "//a[text()='About Us']")
+    @FindBy(xpath = "//a[@class='Navbar_textLink__f6_Al mr-4'][normalize-space()='About Us']")
     public WebElement aboutUsButton;
     @FindBy(xpath = "//a[text()='Contact Us']")
     public WebElement contactUsButton;

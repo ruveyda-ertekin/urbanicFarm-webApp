@@ -1,10 +1,75 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="4.479">
-    <testcase classname="Verify various operations on the home page" name="User should be able to perform various operations on homepage" time="4.419">
+<testsuite errors="0" failures="2" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="10" time="35.449">
+    <testcase classname="Verify that the home page is accessible" name="As a user I should be able to access the home page" time="4.574">
+        <system-out><![CDATA[Given the user is on the home page..........................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Verify that the home page header buttons" name="As a user I should be able to see the various titles when I enter the homepage" time="3.038">
+        <system-out><![CDATA[Given the user is on the home page..........................................passed
+Then the following headers should be visible from left to right:............passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Verify various operations on the home page" name="User should be able to perform various operations on homepage" time="4.966">
+        <system-out><![CDATA[Given the user is on the home page..........................................passed
+When the relevant Blog button should be clickable...........................passed
+And the user clicks on the Blog link........................................passed
+Then the relevant Blog page should be visible...............................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Verify various operations on the home page" name="User should be able to perform various operations on homepage" time="3.221">
+        <system-out><![CDATA[Given the user is on the home page..........................................passed
+When the relevant Farmers Market button should be clickable.................passed
+And the user clicks on the Farmers Market link..............................passed
+Then the relevant Farmers Market page should be visible.....................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Verify various operations on the home page" name="User should be able to perform various operations on homepage" time="3.101">
+        <system-out><![CDATA[Given the user is on the home page..........................................passed
+When the relevant Explore button should be clickable........................passed
+And the user clicks on the Explore link.....................................passed
+Then the relevant Explore page should be visible............................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Verify various operations on the home page" name="User should be able to perform various operations on homepage" time="4.151">
+        <failure message="About Us page is not visible." type="java.lang.AssertionError"><![CDATA[Given the user is on the home page..........................................passed
+When the relevant About Us button should be clickable.......................passed
+And the user clicks on the About Us link....................................passed
+Then the relevant About Us page should be visible...........................failed
+
+StackTrace:
+java.lang.AssertionError: About Us page is not visible.
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at stepDefinitions.UI_stepDef.US_006.theRelevantAboutUsPageShouldBeVisible(US_006.java:22)
+	at ✽.the relevant About Us page should be visible(file:///Users/ruveydaertekin/urbanicFarm-webApp/src/test/resources/features/UI_feature/homePage/US_006.feature:11)
+]]></failure>
+    </testcase>
+    <testcase classname="Verify various operations on the home page" name="User should be able to perform various operations on homepage" time="3.128">
+        <system-out><![CDATA[Given the user is on the home page..........................................passed
+When the relevant Contact Us button should be clickable.....................passed
+And the user clicks on the Contact Us link..................................passed
+Then the relevant Contact Us page should be visible.........................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Verify various operations on the home page" name="User should be able to perform various operations on homepage" time="3.194">
         <system-out><![CDATA[Given the user is on the home page..........................................passed
 When the relevant Login button should be clickable..........................passed
 And the user clicks on the Login link.......................................passed
 Then the relevant Login page should be visible..............................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Verify various operations on the home page" name="User should be able to perform various operations on homepage" time="2.794">
+        <failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception"><![CDATA[Given the user is on the home page..........................................passed
+When the relevant Register button should be clickable.......................undefined
+And the user clicks on the Register link....................................skipped
+Then the relevant Register page should be visible...........................skipped
+]]></failure>
+    </testcase>
+    <testcase classname="Login functionality" name="Successful login with valid credentials" time="3.121">
+        <system-out><![CDATA[Given the user is on the login page.........................................passed
+When the user enters valid credentials......................................passed
+And the user clicks on the login button.....................................passed
+Then the user should be logged in successfully..............................passed
 ]]></system-out>
     </testcase>
 </testsuite>

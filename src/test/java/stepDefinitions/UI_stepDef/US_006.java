@@ -7,13 +7,9 @@ import org.junit.Assert;
 import pages.CommonPage;
 import utilities.ReusableMethods;
 
-import static utilities.ReusableMethods.waitFor;
-import static utilities.ReusableMethods.waitForVisibility;
-
 public class US_006 extends CommonPage {
     @When("the relevant About Us button should be clickable")
     public void theRelevantAboutUsButtonShouldBeClickable() {
-
         ReusableMethods.waitForClickabilityWithElement(getHomePage().aboutUsButton, 5);
         Assert.assertTrue("About Us button is not clickable.", getHomePage().aboutUsButton.isEnabled());
     }

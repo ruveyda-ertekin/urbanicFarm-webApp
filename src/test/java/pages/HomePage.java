@@ -27,6 +27,8 @@ public class HomePage extends CommonPage {
     public WebElement registerButton;
     @FindBy(xpath = "//button[normalize-space()='Get fresh produce']")
     public WebElement getFreshProduceButton;
+    @FindBy(xpath = "//p[text()='Sell Your Products']")
+    public WebElement sellYourProductsText;
 
     public HomePage() {
         PageFactory.initElements(Driver.getDriver(), this);

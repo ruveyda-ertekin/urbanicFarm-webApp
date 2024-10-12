@@ -1,4 +1,4 @@
-@UI @regression @US_003
+@UI @regression @US_005
 Feature: Verify various operations on the home page
 
   Background:
@@ -6,6 +6,6 @@ Feature: Verify various operations on the home page
 
   @TC-01
   Scenario: User should be able to perform various operations on homepage
-    When the relevant Blog button should be clickable
-    And the user clicks on the Blog link
-    Then the relevant Blog page should be visible
+    When the relevant Explore button should be clickable
+    And the user clicks on the Explore link
+    Then the relevant Explore page should be visible

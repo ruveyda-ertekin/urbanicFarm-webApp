@@ -1,0 +1,4 @@
+file:src/test/resources/features/UI_feature/homePage/US_006.feature:8
+file:src/test/resources/features/UI_feature/homePage/US_007.feature:8
+file:src/test/resources/features/UI_feature/homePage/US_008.feature:8
+file:src/test/resources/features/UI_feature/homePage/US_009.feature:8

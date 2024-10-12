@@ -4,12 +4,11 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 import pages.CommonPage;
 import utilities.ConfigurationReader;
-
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
 import utilities.ReusableMethods;
 
 import static stepDefinitions.Hooks.driver;
@@ -17,8 +16,6 @@ import static stepDefinitions.Hooks.driver;
 public class US_038 extends CommonPage {
 
     private static final Logger logger = LogManager.getLogger(US_038.class);
-
-    String baseURL = "https://test.urbanicfarm.com/";
     String loginPageURL = "https://test.urbanicfarm.com/auth/login";
 
     @Given("the user is on the login page")

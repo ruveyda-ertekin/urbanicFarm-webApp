@@ -7,18 +7,15 @@ import utilities.Driver;
 
 public class LoginPage extends CommonPage {
 
-    public LoginPage() {
-        PageFactory.initElements(Driver.getDriver(), this);
-    }
-
     @FindBy(xpath = "//input[@placeholder='Email']")
     public WebElement emailButton;
     @FindBy(xpath = "//input[@placeholder='Password']")
     public WebElement passwordButton;
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement loginButton;
-
-
+    public LoginPage() {
+        PageFactory.initElements(Driver.getDriver(), this);
+    }
 
 
 }

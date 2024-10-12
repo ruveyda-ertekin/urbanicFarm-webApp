@@ -5,14 +5,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class FarmersMarketPage extends CommonPage {
+public class ExplorePage extends CommonPage {
 
-    @FindBy(xpath = "//div[@class='text-center CheckDistrictModal_sectionHeading__3Heis']")
-    public WebElement farmersMarketPagePopUpButton;
+    @FindBy(xpath = "//span[normalize-space()='Local seller near you']")
+    public WebElement explorePageText;
 
-    public FarmersMarketPage() {
+    public ExplorePage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
-
-
 }

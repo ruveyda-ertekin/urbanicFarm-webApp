@@ -10,6 +10,8 @@ public abstract class CommonPage {
     public LoginPage loginPage;
     public BlogPage blogPage;
     public FarmersMarketPage farmersMarketPage;
+    public ExplorePage explorePage;
+    public AboutUsPage aboutUsPage;
 
     public CommonPage() {
         PageFactory.initElements(driver, this);
@@ -41,5 +43,19 @@ public abstract class CommonPage {
             farmersMarketPage = new FarmersMarketPage();
         }
         return farmersMarketPage;
+    }
+
+    public ExplorePage getExplorePage() {
+        if (explorePage == null) {
+            explorePage = new ExplorePage();
+        }
+        return explorePage;
+    }
+
+    public AboutUsPage getAboutUsPage() {
+        if (aboutUsPage == null) {
+            aboutUsPage = new AboutUsPage();
+        }
+        return aboutUsPage;
     }
 }

@@ -29,7 +29,10 @@ public class HomePage extends CommonPage {
     public WebElement getFreshProduceButton;
     @FindBy(xpath = "//p[text()='Sell Your Products']")
     public WebElement sellYourProductsText;
-
+    @FindBy(xpath = "//section[@class='Section11_container__1RxHE d-flex align-items-center my-5 justify-content-around']//p[1]")
+    public WebElement forFreeText;
+    @FindBy(xpath = "//button[normalize-space()='Register now!']")
+    public WebElement registerNowButton;
     public HomePage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }

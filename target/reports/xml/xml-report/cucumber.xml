@@ -1,10 +1,144 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="4.214">
-    <testcase classname="Verify various operations on the home page" name="Verify that the 'Get fresh produce' button is clickable and relevant page should be visible" time="4.153">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="21" time="72.749">
+    <testcase classname="Verify that the home page is accessible" name="As a user I should be able to access the home page" time="4.365">
+        <system-out><![CDATA[Given the user is on the home page..........................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Verify that the home page header buttons" name="As a user I should be able to see the various titles when I enter the homepage" time="2.879">
+        <system-out><![CDATA[Given the user is on the home page..........................................passed
+Then the following headers should be visible from left to right:............passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Verify that the home page header buttons" name="Verify that the Blog link is clickable and navigates to the Blog page" time="5.052">
+        <system-out><![CDATA[Given the user is on the home page..........................................passed
+When the relevant Blog button should be clickable...........................passed
+And the user clicks on the Blog link........................................passed
+Then the relevant Blog page should be visible...............................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Verify that the home page header buttons" name="Verify that the Farmers Market link is clickable and navigates to the Farmers Market page" time="3.296">
+        <system-out><![CDATA[Given the user is on the home page..........................................passed
+When the relevant Farmers Market button should be clickable.................passed
+And the user clicks on the Farmers Market link..............................passed
+Then the relevant Farmers Market page should be visible.....................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Verify that the home page header buttons" name="Verify that the Explore link is clickable and navigates to the Explore page" time="3.279">
+        <system-out><![CDATA[Given the user is on the home page..........................................passed
+When the relevant Explore button should be clickable........................passed
+And the user clicks on the Explore link.....................................passed
+Then the relevant Explore page should be visible............................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Verify that the home page header buttons" name="Verify that the About Us link is clickable and navigates to the About Us page" time="4.069">
+        <system-out><![CDATA[Given the user is on the home page..........................................passed
+When the relevant About Us button should be clickable.......................passed
+And the user clicks on the About Us link....................................passed
+Then the relevant About Us page should be visible...........................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Verify that the home page header buttons" name="Verify that the Contact Us link is clickable and navigates to the Contact Us page" time="3.348">
+        <system-out><![CDATA[Given the user is on the home page..........................................passed
+When the relevant Contact Us button should be clickable.....................passed
+And the user clicks on the Contact Us link..................................passed
+Then the relevant Contact Us page should be visible.........................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Verify that the home page header buttons" name="Verify that the Login link is clickable and navigates to the Login page" time="3.273">
+        <system-out><![CDATA[Given the user is on the home page..........................................passed
+When the relevant Login button should be clickable..........................passed
+And the user clicks on the Login link.......................................passed
+Then the relevant Login page should be visible..............................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Verify that the home page header buttons" name="Verify that the Register link is clickable and navigates to the Register page" time="2.931">
+        <system-out><![CDATA[Given the user is on the home page..........................................passed
+When the relevant Register button should be clickable.......................passed
+And the user clicks on the Register link....................................passed
+Then the relevant Register page should be visible...........................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Verify that the home page header buttons" name="Verify that the 'Get fresh produce' button is clickable and relevant page should be visible" time="3.146">
         <system-out><![CDATA[Given the user is on the home page..........................................passed
 When the relevant Get fresh produce button should be clickable..............passed
 And the user clicks on the Get fresh produce link...........................passed
 Then the relevant Farmers Market page should be visible.....................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Verify that the Blog link is clickable and navigates to the Blog page" name="Verify that the Blog link is clickable and navigates to the Blog page" time="4.798">
+        <system-out><![CDATA[Given the user is on the home page..........................................passed
+When the relevant Blog button should be clickable...........................passed
+And the user clicks on the Blog link........................................passed
+Then the relevant Blog page should be visible...............................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Verify various operations on the home page" name="Verify that the Farmers Market link is clickable and navigates to the Farmers Market page" time="3.119">
+        <system-out><![CDATA[Given the user is on the home page..........................................passed
+When the relevant Farmers Market button should be clickable.................passed
+And the user clicks on the Farmers Market link..............................passed
+Then the relevant Farmers Market page should be visible.....................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Verify various operations on the home page" name="Verify that the Explore link is clickable and navigates to the Explore page" time="3.16">
+        <system-out><![CDATA[Given the user is on the home page..........................................passed
+When the relevant Explore button should be clickable........................passed
+And the user clicks on the Explore link.....................................passed
+Then the relevant Explore page should be visible............................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Verify various operations on the home page" name="Verify that the About Us link is clickable and navigates to the About Us page" time="3.915">
+        <system-out><![CDATA[Given the user is on the home page..........................................passed
+When the relevant About Us button should be clickable.......................passed
+And the user clicks on the About Us link....................................passed
+Then the relevant About Us page should be visible...........................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Verify various operations on the home page" name="Verify that the Contact Us link is clickable and navigates to the Contact Us page" time="3.191">
+        <system-out><![CDATA[Given the user is on the home page..........................................passed
+When the relevant Contact Us button should be clickable.....................passed
+And the user clicks on the Contact Us link..................................passed
+Then the relevant Contact Us page should be visible.........................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Verify various operations on the home page and login page visibility" name="Verify that the Login link is clickable and navigates to the Login page" time="3.288">
+        <system-out><![CDATA[Given the user is on the home page..........................................passed
+When the relevant Login button should be clickable..........................passed
+And the user clicks on the Login link.......................................passed
+Then the relevant Login page should be visible..............................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Verify various operations on the home page" name="User should be able to perform various operations on homepage" time="3.137">
+        <system-out><![CDATA[Given the user is on the home page..........................................passed
+When the relevant Register button should be clickable.......................passed
+And the user clicks on the Register link....................................passed
+Then the relevant Register page should be visible...........................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Verify various operations on the home page" name="Verify that the 'Get fresh produce' button is clickable and relevant page should be visible" time="3.298">
+        <system-out><![CDATA[Given the user is on the home page..........................................passed
+When the relevant Get fresh produce button should be clickable..............passed
+And the user clicks on the Get fresh produce link...........................passed
+Then the relevant Farmers Market page should be visible.....................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Verify various operations on the home page" name="Verify that the 'Sell Your Products' text is visible" time="3.186">
+        <system-out><![CDATA[Given the user is on the home page..........................................passed
+When the user scrolls down the page.........................................passed
+Then the Sell Your Products text should be visible..........................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Verify various operations on the home page" name="Verify that &quot;Backyard gardeners and farmers join the Movement For Free!&quot; text visible and &quot;Register now!&quot; button at the bottom should be clickable" time="2.749">
+        <system-out><![CDATA[Given the user is on the home page..........................................passed
+When the user scrolls down the page until they see the text.................passed
+Then Backyard gardeners and farmers join the Movement For Free! text should be visible.passed
+And Register now! button should be clickable................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Login functionality" name="Successful login with valid credentials" time="3.096">
+        <system-out><![CDATA[Given the user is on the login page.........................................passed
+When the user enters valid credentials......................................passed
+And the user clicks on the login button.....................................passed
+Then the user should be logged in successfully..............................passed
 ]]></system-out>
     </testcase>
 </testsuite>

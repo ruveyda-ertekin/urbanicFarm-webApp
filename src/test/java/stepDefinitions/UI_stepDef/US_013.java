@@ -31,4 +31,5 @@ public class US_013 extends CommonPage {
     public void theTRADEButtonShouldBeClickable() {
         Assert.assertTrue("TRADE button is not clickable.", getHomePage().tradeButton.isEnabled());
     }
+
 }

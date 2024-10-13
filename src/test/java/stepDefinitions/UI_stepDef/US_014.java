@@ -14,7 +14,6 @@ public class US_014 extends CommonPage {
         Assert.assertTrue("Contribution to the Environment and Society text is not visible.", getHomePage().contributionToTheEnvironmentAndSocietyHeading.isDisplayed());
     }
 
-
     @And("the Register Now button should be clickable")
     public void theRegisterNowButtonShouldBeClickable() {
         Assert.assertTrue("Register Now button is not clickable.", getHomePage().registerNowMiddleButton.isEnabled());

@@ -1,4 +1,4 @@
-@UI @regression @US_011
+@UI @regression @US_012
 Feature: Verify various operations on the home page
 
   Background:

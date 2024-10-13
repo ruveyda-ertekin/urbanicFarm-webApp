@@ -33,6 +33,12 @@ public class HomePage extends CommonPage {
     public WebElement forFreeText;
     @FindBy(xpath = "//button[normalize-space()='Register now!']")
     public WebElement registerNowButton;
+    @FindBy(xpath = "//button[text()='sell']")
+    public WebElement sellButton;
+    @FindBy(xpath = "//button[text()='share']")
+    public WebElement shareButton;
+    @FindBy(xpath = "//button[text()='trade']")
+    public WebElement tradeButton;
     public HomePage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }

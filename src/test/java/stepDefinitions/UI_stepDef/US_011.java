@@ -6,7 +6,7 @@ import org.junit.Assert;
 import pages.CommonPage;
 import utilities.ReusableMethods;
 
-public class US_011 extends CommonPage{
+public class US_011 extends CommonPage {
     @When("the user scrolls down the page")
     public void theUserScrollsDownThePage() {
         ReusableMethods.scrollToElement(getHomePage().sellYourProductsText);

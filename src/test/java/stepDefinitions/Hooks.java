@@ -13,22 +13,17 @@ import pages.CommonPage;
 import utilities.Authentication;
 import utilities.Driver;
 
-import static base_URL.urbanicFarm_baseURL.setUpUrbanicFarm;
-import static utilities.Authentication.generateToken;
-
 public class Hooks {
 
     public static WebDriver driver;
     public static CommonPage commonPage;
     public static Actions actions;
-
     public static boolean isHeadless = false;
     public static String browserType = "chrome";
     public static boolean isFullScreen = true;
     public static int width;
     public static int height;
     public static Response response;
-
 
     @Before("@API")
     public void setUpApi() {

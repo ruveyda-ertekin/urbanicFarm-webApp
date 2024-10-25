@@ -1,75 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="2" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="10.285">
-    <testcase classname="Verify clickable buttons under the &quot;Reduce waste, strengthen your community&quot; heading" name="Verify that the &quot;What's Near You&quot; buttons should be clickable under the &quot;Reduce waste, strengthen your community&quot; heading" time="5.546">
-        <failure message="element click intercepted: Element is not clickable at point (1167, 3490)&#10;  (Session info: chrome=129.0.6668.91)&#10;Build info: version: '4.13.0', revision: 'ba948ece5b*'&#10;System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.5', java.version: '21.0.1'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [45d5685d54ddf4bac68e0dddf86c9579, clickElement {id=f.F10F1C916E175551A443491A699BEA3F.d.CC787DC784E7812E2097CBA88FEA156F.e.7}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.91, chrome: {chromedriverVersion: 129.0.6668.100 (cf58cba358d..., userDataDir: /var/folders/qj/xwhzl1cd4xs...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55763}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:55763/devtoo..., se:cdpVersion: 129.0.6668.91, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Element: [[ChromeDriver: chrome on mac (45d5685d54ddf4bac68e0dddf86c9579)] -&gt; xpath: //button[normalize-space()='Whats Near You']]&#10;Session ID: 45d5685d54ddf4bac68e0dddf86c9579" type="org.openqa.selenium.ElementClickInterceptedException"><![CDATA[Given the user is on the home page..........................................passed
-When the user scrolls down the page until the Reduce waste, strengthen your community heading is visible.passed
-And What's Near You button should be clickable..............................failed
-Then the relevant What's Near You page should open..........................skipped
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="6.558">
+    <testcase classname="Get Seller Rates" name="Successfully get rates of the seller" time="2.286">
+        <failure message="Cannot invoke &quot;io.restassured.response.Response.getStatusCode()&quot; because &quot;this.response&quot; is null" type="java.lang.NullPointerException"><![CDATA[When the user sends a POST request to the getRates endpoint.................passed
+Then the response status code should be 200.................................failed
+And the response should contain the seller rates............................skipped
 
 StackTrace:
-org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element is not clickable at point (1167, 3490)
-  (Session info: chrome=129.0.6668.91)
-Build info: version: '4.13.0', revision: 'ba948ece5b*'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.5', java.version: '21.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [45d5685d54ddf4bac68e0dddf86c9579, clickElement {id=f.F10F1C916E175551A443491A699BEA3F.d.CC787DC784E7812E2097CBA88FEA156F.e.7}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.91, chrome: {chromedriverVersion: 129.0.6668.100 (cf58cba358d..., userDataDir: /var/folders/qj/xwhzl1cd4xs...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55763}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:55763/devtoo..., se:cdpVersion: 129.0.6668.91, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on mac (45d5685d54ddf4bac68e0dddf86c9579)] -> xpath: //button[normalize-space()='Whats Near You']]
-Session ID: 45d5685d54ddf4bac68e0dddf86c9579
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy25.click(Unknown Source)
-	at stepDefinitions.UI_stepDef.US_015.whatSNearYouButtonShouldBeClickable(US_015.java:23)
-	at ✽.What's Near You button should be clickable(file:///Users/ruveydaertekin/urbanicFarm-webApp/src/test/resources/features/UI_feature/homePage/US_015.feature:10)
+java.lang.NullPointerException: Cannot invoke "io.restassured.response.Response.getStatusCode()" because "this.response" is null
+	at stepDefinitions.API_stepDef.US_100.theResponseStatusCodeShouldBe(US_100.java:48)
+	at ✽.the response status code should be 200(file:///Users/ruveydaertekin/urbanicFarm-webApp/src/test/resources/features/API_feature/accountPage/US_102.feature:10)
 ]]></failure>
     </testcase>
-    <testcase classname="Verify clickable buttons under the &quot;Reduce waste, strengthen your community&quot; heading" name="Verify that the &quot;Post Your Goods&quot; buttons should be clickable under the &quot;Reduce waste, strengthen your community&quot; heading" time="4.643">
-        <failure message="element click intercepted: Element is not clickable at point (1167, 3578)&#10;  (Session info: chrome=129.0.6668.91)&#10;Build info: version: '4.13.0', revision: 'ba948ece5b*'&#10;System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.5', java.version: '21.0.1'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [b59ecdcb2ef7d1ca68a0c7faf9a9d3a4, clickElement {id=f.E7211050C1D7504A5FDFE776301A052B.d.9F67C7CDAEB5FB04B6DED53E13D94591.e.7}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.91, chrome: {chromedriverVersion: 129.0.6668.100 (cf58cba358d..., userDataDir: /var/folders/qj/xwhzl1cd4xs...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55798}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:55798/devtoo..., se:cdpVersion: 129.0.6668.91, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Element: [[ChromeDriver: chrome on mac (b59ecdcb2ef7d1ca68a0c7faf9a9d3a4)] -&gt; xpath: //button[normalize-space()='Post Your Goods']]&#10;Session ID: b59ecdcb2ef7d1ca68a0c7faf9a9d3a4" type="org.openqa.selenium.ElementClickInterceptedException"><![CDATA[Given the user is on the home page..........................................passed
-When the user scrolls down the page until the Reduce waste, strengthen your community heading is visible.passed
-And Post Your Goods button should be clickable..............................failed
-Then the relevant Post Your Goods page should open..........................skipped
-
-StackTrace:
-org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element is not clickable at point (1167, 3578)
-  (Session info: chrome=129.0.6668.91)
-Build info: version: '4.13.0', revision: 'ba948ece5b*'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.5', java.version: '21.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b59ecdcb2ef7d1ca68a0c7faf9a9d3a4, clickElement {id=f.E7211050C1D7504A5FDFE776301A052B.d.9F67C7CDAEB5FB04B6DED53E13D94591.e.7}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.91, chrome: {chromedriverVersion: 129.0.6668.100 (cf58cba358d..., userDataDir: /var/folders/qj/xwhzl1cd4xs...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55798}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:55798/devtoo..., se:cdpVersion: 129.0.6668.91, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on mac (b59ecdcb2ef7d1ca68a0c7faf9a9d3a4)] -> xpath: //button[normalize-space()='Post Your Goods']]
-Session ID: b59ecdcb2ef7d1ca68a0c7faf9a9d3a4
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy25.click(Unknown Source)
-	at stepDefinitions.UI_stepDef.US_015.postYourGoodsButtonShouldBeClickable(US_015.java:37)
-	at ✽.Post Your Goods button should be clickable(file:///Users/ruveydaertekin/urbanicFarm-webApp/src/test/resources/features/UI_feature/homePage/US_015.feature:16)
-]]></failure>
+    <testcase classname="User Login API" name="Successful login with valid credentials" time="1.705">
+        <system-out><![CDATA[Given the API base URL is set to "https://test.urbanicfarm.com/"............passed
+Given the user has a valid login payload....................................passed
+When the user sends a POST request to the login endpoint....................passed
+Then the response status code should be 200.................................passed
+And the user get PHPSESSID..................................................passed
+And the response should contain a token.....................................passed
+And the response should contain a email.....................................passed
+And the response should contain a first_name................................passed
+And the response should contain a first_lastname............................passed
+And the response should contain a device_token..............................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Buyer Login API" name="User must be able to log in as candidate" time="2.468">
+        <system-out><![CDATA[When the user sends POST request to login as a buyer........................passed
+Then the user asserts login response data...................................passed
+]]></system-out>
     </testcase>
 </testsuite>

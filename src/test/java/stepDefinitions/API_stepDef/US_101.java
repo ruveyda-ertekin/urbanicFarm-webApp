@@ -18,7 +18,7 @@ public class US_101 {
 
     @When("the user sends POST request to login as a buyer")
     public void theUserSendsPOSTRequestToLoginAsABuyer() {
-        
+
         // Generate token using Authentication class
         String token = Authentication.generateToken();
 

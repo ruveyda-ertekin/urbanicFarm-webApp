@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import base_URL.urbanicFarm_baseURL;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -9,7 +10,11 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import pages.CommonPage;
+import utilities.Authentication;
 import utilities.Driver;
+
+import static base_URL.urbanicFarm_baseURL.setUpUrbanicFarm;
+import static utilities.Authentication.generateToken;
 
 public class Hooks {
 
@@ -24,6 +29,16 @@ public class Hooks {
     public static int height;
     public static Response response;
 
+
+    @Before("@API")
+    public void setUpApi() {
+        urbanicFarm_baseURL.setUpUrbanicFarm(); // Sets up base URL
+        Authentication.generateToken(); // Generates and stores token
+
+        // Attach the token to spec for future requests
+        urbanicFarm_baseURL.specUrbanicFarm.header("Authorization", "Bearer " + Authentication.token);
+    }
+
     @Before(value = "@headless", order = 0)
     public void setIsHeadless() {
         isHeadless = true;
@@ -33,7 +48,6 @@ public class Hooks {
     public void setIsFirefox() {
         browserType = "firefox";
     }
-
 
     @Before(value = "@iPhone12", order = 0)
     public void setiPhone12() {

@@ -37,7 +37,6 @@ public class US_100 {
                 .given()
                 .contentType(ContentType.JSON)
                 .body(payload)
-                .when()
                 .post(baseURL + "api/public/login");
 
         response.prettyPrint();
@@ -54,13 +53,13 @@ public class US_100 {
     public void theResponseShouldContainAToken() {
         String token = response.jsonPath().getString("token");
         Assert.assertNotNull("Token should be present", token);
+        System.out.println("token:" + token);
     }
 
     @And("the user get PHPSESSID")
     public void theUserGetPHPSESSID() {
         phpSessId = response.cookies().get("PHPSESSID");
         System.out.println("PHPSESSID=" + phpSessId);
-
     }
 
     @And("the response should contain a email")
@@ -79,5 +78,11 @@ public class US_100 {
     public void theResponseShouldContainAFirst_lastname() {
         String first_lastname = response.jsonPath().getString("first_lastname");
         Assert.assertNotNull("First lastname should be present", first_lastname);
+    }
+
+    @And("the response should contain a device_token")
+    public void theResponseShouldContainADevice_token() {
+        String device_token = response.jsonPath().getString("device_token");
+        Assert.assertNotNull("device_token should be present", device_token);
     }
 }
